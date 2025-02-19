@@ -17,12 +17,20 @@ export const fetchStars = async () => {
   const API_KEY = import.meta.env.VITE_API_KEY;
   const API_URL = "https://api.api-ninjas.com/v1/stars?min_apparent_magnitude=1.0&max_apparent_magnitude=2.0";
 
+  console.log("Fetching from:", API_URL);
+  console.log("Using API Key:", API_KEY);
+
   try {
     const response = await fetch(API_URL, {
       headers: { "X-Api-Key": API_KEY },
     });
 
-    if (!response.ok) throw new Error(`API error: ${response.statusText}`);
+    console.log("Response status:", response.status);
+
+    if (!response.ok) {
+      const errorText = await response.text(); // Get more details from the response
+      throw new Error(`API error: ${response.statusText} - ${errorText}`);
+    }
 
     const data = await response.json();
     console.log("Fetched star data:", data); // Debugging
@@ -31,7 +39,7 @@ export const fetchStars = async () => {
       name: star.name || "Unknown Star",
       description: `Magnitude: ${star.apparent_magnitude}, Constellation: ${star.constellation || "Unknown"}`,
       spectralClass: star.spectral_class || null,
-      color: spectralClassToColor(star.spectral_class), // Assign color here
+      color: spectralClassToColor(star.spectral_class),
       position: [
         Math.random() * 20 - 10,
         Math.random() * 20 - 10,
@@ -43,3 +51,4 @@ export const fetchStars = async () => {
     return [];
   }
 };
+
