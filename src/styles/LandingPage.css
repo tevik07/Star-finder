@@ -1,0 +1,279 @@
+@keyframes move-twinkle {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index: 0;
+}
+
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index: 1;
+  animation: move-twinkle 200s linear infinite;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(26, 38, 57, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glow-effect {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.2) 0%, rgba(100, 255, 218, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Update button styles */
+button {
+  border-radius: 25px !important; /* More rounded corners */
+  transition: all 0.3s ease !important;
+  padding: 10px 20px !important;
+}
+
+button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Update input styles */
+input {
+  border-radius: 25px !important;
+  padding: 12px 20px !important;
+  transition: all 0.3s ease !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+input:hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1) !important;
+}
+
+input:focus {
+  outline: none !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Update modal button styles */
+.modal-content button {
+  border-radius: 25px !important;
+}
+
+.modal-content button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Special styles for primary buttons */
+button[type="submit"],
+.primary-button {
+  background: #64ffda !important;
+  color: #0a192f !important;
+}
+
+button[type="submit"]:hover,
+.primary-button:hover {
+  background: rgba(100, 255, 218, 0.8) !important;
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3) !important;
+}
+
+/* Navigation bar button styles */
+.nav-bar button {
+  border-radius: 25px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.nav-bar button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Search input styles */
+.search-input {
+  border-radius: 25px !important;
+  padding: 12px 20px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.search-input:hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.search-input:focus {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Back button styles */
+.back-button {
+  border-radius: 25px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #1a2639 0%, #1f2b3e 100%);
+  padding: 40px;
+  border-radius: 15px;
+  width: 400px;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  color: white;
+}
+
+.modal-content h2 {
+  color: #64ffda;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: #64ffda;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.button-group button[type="submit"] {
+  background: #64ffda;
+  border: none;
+  color: #0a192f;
+}
+
+.button-group button[type="button"] {
+  background: transparent;
+  border: 1px solid #64ffda;
+  color: #64ffda;
+}
+
+.button-group button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+}
+
+.error {
+  color: #ff6b6b;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+
+.nav-bar button {
+  padding: 8px 16px;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid #64ffda;
+  color: #64ffda;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-bar button:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: translateY(-2px);
+} 
