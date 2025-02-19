@@ -15,7 +15,7 @@ const spectralClassToColor = (spectralClass: string | null): string => {
 
 export const fetchStars = async () => {
   const API_KEY = import.meta.env.VITE_API_KEY;
-  const API_URL = "https://api.api-ninjas.com/v1/stars?min_apparent_magnitude=1.0&max_apparent_magnitude=2.0";
+  const API_URL = "api url";
 
   console.log("Fetching from:", API_URL);
   console.log("Using API Key:", API_KEY);
